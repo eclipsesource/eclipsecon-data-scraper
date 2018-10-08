@@ -1,5 +1,7 @@
 # EclipseCon Data Scraper
 
+[![Build Status](https://travis-ci.com/eclipsesource/eclipsecon-data-scraper.svg?branch=master)](https://travis-ci.com/eclipsesource/eclipsecon-data-scraper)
+
 Scrapes data from https://www.eclipsecon.org/api/sessions and https://www.eclipsecon.org/api/schedule_items and aggregates it into a .json file compatible with format of the legacy 'api/1.0/eclipsecon_scheduled_sessions' endpoint supported by [Tabris Con](https://github.com/eclipsesource/tabris-con).
 
 ## Compatibility
