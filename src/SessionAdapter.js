@@ -51,9 +51,9 @@ module.exports = class SessionAdapter {
 
   _adaptSpeakers(speakers) {
     if (!speakers) return;
-    return speakers.map(({uid, name, twitter_handle, picture, bio, job_title, org}) => omitBy({
+    return speakers.map(({uid, first_name, last_name, twitter_handle, picture, bio, job_title, org}) => omitBy({
       id: uid,
-      fullname: name,
+      fullname: first_name + ' ' + last_name,
       twitter: twitter_handle,
       picture,
       bio,

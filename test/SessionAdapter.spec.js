@@ -44,8 +44,13 @@ describe('SessionAdapter', () => {
   function itAdaptsPresenters(adapter) {
     for (let i = 0; i < 2; i++) {
       describe(`for presenter ${i}`, () => {
+        it(`presenter${i}.fullname`, () => {
+          let result = {};
+          set(result, `speakers[${i}].first_name`, 'Foo');
+          set(result, `speakers[${i}].last_name`, 'Bar');
+          expect(adapter(result).presenter[i].fullname).to.equal('Foo Bar');
+        });
         itAdapts(adapter, {[`speakers[${i}].uid`]: `presenter[${i}].id`});
-        itAdapts(adapter, {[`speakers[${i}].name`]: `presenter[${i}].fullname`});
         itAdapts(adapter, {[`speakers[${i}].twitter_handle`]: `presenter[${i}].twitter`});
         itAdapts(adapter, {[`speakers[${i}].picture`]: `presenter[${i}].picture`});
         itAdapts(adapter, {[`speakers[${i}].bio`]: `presenter[${i}].bio`});
