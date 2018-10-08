@@ -1,0 +1,26 @@
+{
+  "name": "data-scraper",
+  "version": "1.0.0",
+  "description": "Scrapes data from 'api/sessions' and 'api/schedule_items' endpoints and aggregates them into a .json file compatible with format of the legacy 'api/1.0/eclipsecon_scheduled_sessions' endpoint.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "npm run build && node dist",
+    "build": "webpack .",
+    "test": "mocha 'test/**/*.spec.js'"
+  },
+  "author": "Tabris.js Team",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.4",
+    "chai": "^4.2.0",
+    "lodash.get": "^4.4.2",
+    "lodash.omitby": "^4.6.0",
+    "lodash.set": "^4.3.2",
+    "mocha": "^5.2.0",
+    "node-fetch": "^2.2.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  }
+}
