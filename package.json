@@ -1,6 +1,6 @@
 {
   "name": "data-scraper",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Scrapes data from 'api/sessions' and 'api/schedule_items' endpoints and aggregates them into a .json file compatible with format of the legacy 'api/1.0/eclipsecon_scheduled_sessions' endpoint.",
   "main": "src/index.js",
   "scripts": {

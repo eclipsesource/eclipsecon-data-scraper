@@ -3,14 +3,14 @@ const Link = require('./Link');
 
 module.exports = class ConferenceDataFetcher {
 
-  async fetchConferenceData() {
+  async fetchConferenceData(event) {
     let attempts = 0;
     let sessions;
     let scheduleItems;
     while (++attempts <= 5) {
       try {
-        sessions = await this._fetchPages('https://www.eclipsecon.org/api/sessions?event=europe2018');
-        scheduleItems = await this._fetchPages('https://www.eclipsecon.org/api/schedule_items?event=europe2018&status=accepted&scheduled=1');
+        sessions = await this._fetchPages(`https://www.eclipsecon.org/api/sessions?event=${event}`);
+        scheduleItems = await this._fetchPages(`https://www.eclipsecon.org/api/schedule_items?event=${event}&status=accepted&scheduled=1`);
         break;
       } catch(e) {
         console.error('Error fetching data: ' + e.stack);
