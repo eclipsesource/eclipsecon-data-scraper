@@ -9,7 +9,7 @@ module.exports = class ConferenceDataFetcher {
     let scheduleItems;
     while (++attempts <= 5) {
       try {
-        sessions = await this._fetchPages(`https://www.eclipsecon.org/api/sessions?event=${event}`);
+        sessions = await this._fetchPages(`https://www.eclipsecon.org/api/sessions?event=${event}&status=accepted`);
         scheduleItems = await this._fetchPages(`https://www.eclipsecon.org/api/schedule_items?event=${event}&status=accepted&scheduled=1`);
         break;
       } catch(e) {
